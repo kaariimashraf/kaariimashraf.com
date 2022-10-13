@@ -14,7 +14,8 @@ jobs:
           name: 'copy build'
           command: |
             ls -la
-            scp  -r -o StrictHostKeyChecking=no ./* ubuntu@3.232.116.73:~/new
+            ssh ubuntu@3.232.116.73 'cd /var/www/kaariimashraf && rm -r *'
+            scp  -r -o StrictHostKeyChecking=no ./* ubuntu@3.232.116.73:/var/www/kaariimashraf
 
 # Invoke jobs via workflows
 workflows:
