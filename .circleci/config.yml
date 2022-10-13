@@ -8,10 +8,7 @@ jobs:
       - checkout
       - add_ssh_keys
       - run:
-          name: "Say hello"
-          command: "echo Hello, World!"
-      - run:
-          name: 'copy build'
+          name: 'copy code'
           command: |
             ls -la
             ssh -o StrictHostKeyChecking=no ubuntu@3.232.116.73 'cd /var/www/kaariimashraf && rm -r *'
@@ -19,6 +16,6 @@ jobs:
 
 # Invoke jobs via workflows
 workflows:
-  say-hello-workflow:
+  publish-workflow:
     jobs:
       - deploy
