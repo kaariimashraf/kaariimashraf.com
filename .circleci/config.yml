@@ -6,13 +6,14 @@ jobs:
       - image: cimg/base:stable
     steps:
       - checkout
+      - add_ssh_keys
       - run:
           name: "Say hello"
           command: "echo Hello, World!"
       - run:
           name: 'copy build'
           command: |
-            scp  -r . ubuntu@server:~/new
+            scp  -r -o StrictHostKeyChecking=no . ubuntu@3.232.116.73:~/new
 
 # Invoke jobs via workflows
 workflows:
