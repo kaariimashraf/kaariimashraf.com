@@ -1,3 +1,4 @@
 node_modules
 .DS_Store
 .on-save.json
+nginx_install.txt
