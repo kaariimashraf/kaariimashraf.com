@@ -13,6 +13,7 @@ jobs:
       - run:
           name: 'copy build'
           command: |
+            ls -la
             scp  -r -o StrictHostKeyChecking=no . ubuntu@3.232.116.73:~/new
 
 # Invoke jobs via workflows
